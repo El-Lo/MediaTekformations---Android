@@ -2,7 +2,10 @@ package com.example.mediatek86formations.vue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,15 +38,30 @@ public class FormationsActivity extends AppCompatActivity {
     private void init(){
         controle = Controle.getInstance();
         btnFiltrer = (Button) findViewById(R.id.btnFiltrer);
-        txtFiltre = (EditText) findViewById(R.id.txtFiltre);
-        creerListe();
+
+        btnFiltrer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(FormationsActivity.this, "something has happened", Toast.LENGTH_SHORT).show();
+                creerListe(((EditText)findViewById(R.id.txtFiltre)).getText().toString());
+            }
+        });
+        creerListe("");
+
     }
 
     /**
      * création de la liste adapter
      */
-    private void creerListe(){
-        ArrayList<Formation> lesFormations = controle.getLesFormations();
+    private void creerListe(String filterText){
+        ArrayList<Formation> lesFormations = null;
+        if(TextUtils.isEmpty(filterText)) {
+           lesFormations = controle.getLesFormations();
+        }
+        else
+        {
+            lesFormations = controle.getLesFormationFiltre(filterText);
+        }
         if(lesFormations != null){
             Collections.sort(lesFormations, Collections.<Formation>reverseOrder());
             ListView listView = (ListView)findViewById(R.id.lstFormations);
