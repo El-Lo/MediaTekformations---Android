@@ -24,6 +24,7 @@
             android:parentActivityName=".vue.FormationsActivity" />
         <activity
             android:name=".vue.FormationsActivity"
+            android:label="Les Formations"
             android:exported="false"
             android:parentActivityName=".vue.MainActivity" />
         <activity

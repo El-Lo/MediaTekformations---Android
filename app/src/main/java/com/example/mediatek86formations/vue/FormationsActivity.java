@@ -37,19 +37,17 @@ public class FormationsActivity extends AppCompatActivity {
      */
     private void init(){
         controle = Controle.getInstance();
-        btnFiltrer = (Button) findViewById(R.id.btnFiltrer);
-
-        btnFiltrer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(FormationsActivity.this, "something has happened", Toast.LENGTH_SHORT).show();
-                creerListe(((EditText)findViewById(R.id.txtFiltre)).getText().toString());
-            }
-        });
         creerListe("");
 
     }
-
+    /**
+     * OnClick Event Handler pour filtrer
+     * @param v
+     */
+    public void filtrerGo(View v)
+    {
+        creerListe(((EditText)findViewById(R.id.txtFiltre)).getText().toString());
+    }
     /**
      * création de la liste adapter
      */

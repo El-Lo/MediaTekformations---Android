@@ -50,8 +50,6 @@ A
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 Z
 *app/src/main/res/layout/activity_video.xml,1\9\195b69a3533dc3349a07a3de07ff32290e5d3f19
 Y

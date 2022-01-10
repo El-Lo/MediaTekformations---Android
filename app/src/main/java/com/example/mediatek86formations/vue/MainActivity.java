@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 Activity activity = MainActivity.this;
                 Intent intent = new Intent(activity, classe);
                 activity.startActivity(intent);
+                setTitle("Home");
             }
         });
     }
