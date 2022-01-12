@@ -1,6 +1,7 @@
 package com.example.mediatek86formations.controleur;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.example.mediatek86formations.modele.AccesDistant;
@@ -61,7 +62,10 @@ public class Controle {
      */
     public ArrayList<Formation> getLesFormationFiltre(String filtre){
         Log.d("filter", "started");
+        // reinitialiser liste
         ArrayList<Formation> lesFormationsFiltre = new ArrayList<>();
+        AccesDistant accesDistant = new AccesDistant();
+        accesDistant.envoi("tous", null);
         for(Formation uneFormation : lesFormations){
             if(uneFormation.getTitle().toUpperCase().contains(filtre.toUpperCase())){
                 lesFormationsFiltre.add(uneFormation);
@@ -71,6 +75,28 @@ public class Controle {
         return setFavouris(lesFormationsFiltre);
     }
 
+    /**
+     * retourne les formations favouris
+     * @return
+     */
+    public ArrayList<Formation> getLesFormationFavouris(String filterText){
+        Log.d("filter", "started");
+        ArrayList<Formation> lesFormationsFiltre = new ArrayList<>();
+        if(!TextUtils.isEmpty(filterText)) {
+            lesFormations = getLesFormationFiltre(filterText);
+        }
+
+            ArrayList<Integer> Favouris = _AccesLocal.recupFavouris();
+            for (Formation uneFormation : lesFormations) {
+                if (Favouris.contains(uneFormation.getId())) {
+                    lesFormationsFiltre.add(uneFormation);
+                }
+            }
+
+
+        setFavouris(lesFormationsFiltre);
+        return setFavouris(lesFormationsFiltre);
+    }
     /**
      *
      * @param lesFormations
@@ -85,7 +111,6 @@ public class Controle {
 
             if(Favouris.contains(f.getId()))
             {
-                Log.d("1favID", String.valueOf(f.getId()) + " true");
                 f.setFavouris(true);
             }
             else

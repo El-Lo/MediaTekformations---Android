@@ -2,9 +2,10 @@ package com.example.mediatek86formations.modele;
 
 import com.example.mediatek86formations.outils.MesOutils;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-public class Formation implements Comparable {
+public class Formation extends ArrayList<Formation> implements Comparable {
 
     private int id;
     private Date publishedAt;

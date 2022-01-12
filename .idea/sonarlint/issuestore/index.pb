@@ -34,8 +34,6 @@ A
 gradlew,5\b\5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 >
@@ -48,8 +46,6 @@ x
 Happ/src/main/java/com/example/mediatek86formations/outils/AccesREST.java,5\e\5e8e71a4977d99858ad46399fe187d064bf2dcc9
 x
 Happ/src/main/java/com/example/mediatek86formations/outils/MesOutils.java,f\0\f094cbdf506b460f0c1ed5f11ceefac0680ed66e
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 |
 Lapp/src/main/java/com/example/mediatek86formations/outils/AsyncResponse.java,8\f\8ffd8ee70650aa900ada7b60f5f028324b9549ce
 y

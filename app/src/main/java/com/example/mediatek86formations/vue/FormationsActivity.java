@@ -1,9 +1,7 @@
 package com.example.mediatek86formations.vue;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
-import android.app.Activity;
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -11,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.mediatek86formations.R;
 import com.example.mediatek86formations.controleur.Controle;
@@ -47,7 +44,7 @@ public class FormationsActivity extends AppCompatActivity {
      */
     public void filtrerGo(View v)
     {
-        creerListe(((EditText)findViewById(R.id.txtFiltre)).getText().toString());
+        creerListe(((EditText)findViewById(R.id.txtFiltreFavs)).getText().toString());
     }
     /**
      * création de la liste adapter

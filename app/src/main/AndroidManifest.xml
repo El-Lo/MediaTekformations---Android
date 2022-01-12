@@ -23,6 +23,11 @@
             android:exported="false"
             android:parentActivityName=".vue.FormationsActivity" />
         <activity
+            android:name=".vue.FavorisActivity"
+            android:label="Les Favoris"
+            android:exported="false"
+            android:parentActivityName=".vue.MainActivity" />
+        <activity
             android:name=".vue.FormationsActivity"
             android:label="Les Formations"
             android:exported="false"
