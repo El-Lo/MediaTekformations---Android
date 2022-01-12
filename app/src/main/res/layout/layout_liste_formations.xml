@@ -21,7 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                app:srcCompat="@drawable/coeur_gris" />
+                app:srcCompat="@drawable/coeur_gris" 
+                />
         </LinearLayout>
 
         <LinearLayout

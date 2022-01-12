@@ -1,11 +1,12 @@
 package com.example.mediatek86formations.vue;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ public class FormationsActivity extends AppCompatActivity {
      * initialisations
      */
     private void init(){
-        controle = Controle.getInstance();
+        controle = Controle.getInstance(this);
         creerListe("");
 
     }
@@ -58,6 +59,7 @@ public class FormationsActivity extends AppCompatActivity {
         }
         else
         {
+        Log.d("goToFormationsFilter","going");
             lesFormations = controle.getLesFormationFiltre(filterText);
         }
         if(lesFormations != null){
@@ -67,5 +69,7 @@ public class FormationsActivity extends AppCompatActivity {
             listView.setAdapter(adapter);
         }
     }
+
+
 
 }

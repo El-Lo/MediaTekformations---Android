@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.mediatek86formations.R;
 import com.example.mediatek86formations.controleur.Controle;
 import com.example.mediatek86formations.modele.Formation;
@@ -29,8 +31,8 @@ public class FormationListAdapter extends BaseAdapter {
      */
     public FormationListAdapter(ArrayList<Formation> lesFormations, Context context) {
         this.lesFormations = lesFormations;
-        this.controle = Controle.getInstance();
         this.context = context;
+        this.controle = Controle.getInstance(context);
         this.inflater = LayoutInflater.from(context);
     }
 
@@ -64,7 +66,7 @@ public class FormationListAdapter extends BaseAdapter {
     }
 
     /**
-     * Cobstruction de la ligne
+     * Construction de la ligne
      * @param i
      * @param view
      * @param viewGroup
@@ -79,6 +81,7 @@ public class FormationListAdapter extends BaseAdapter {
             viewProperties.txtListeTitle = (TextView)view.findViewById(R.id.txtListTitle);
             viewProperties.txtListPublishedAt = (TextView)view.findViewById(R.id.txtListPublishedAt);
             viewProperties.btnListFavori = (ImageButton)view.findViewById(R.id.btnListFavori);
+
             view.setTag(viewProperties) ;
         }else{
             viewProperties = (ViewProperties)view.getTag();
@@ -97,6 +100,35 @@ public class FormationListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 ouvrirUneFormationActivity(v);
+            }
+        });
+        viewProperties.btnListFavori.setTag(i);
+
+            if (lesFormations.get(i).getIsFavouris() == true) {
+                viewProperties.btnListFavori.setImageResource(R.drawable.coeur_rouge);
+            } else {
+                viewProperties.btnListFavori.setImageResource(R.drawable.coeur_gris);
+            }
+        //app:srcCompat="@drawable/coeur_gris"
+        viewProperties.btnListFavori.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int indice = (int)v.getTag();
+                Controle controle = Controle.getInstance(context);
+                    viewProperties.btnListFavori = (ImageButton)v.findViewById(R.id.btnListFavori);
+                    if (lesFormations.get(indice).getIsFavouris() == true) {
+                        controle.supprFavouris((lesFormations.get(indice)).getId());
+                        lesFormations.get(indice).setFavouris(false);
+                        viewProperties.btnListFavori.setImageResource(R.drawable.coeur_gris);
+                    } else {
+                        controle.ajoutFavouris((lesFormations.get(indice)).getId());
+                        lesFormations.get(indice).setFavouris(true);
+                        viewProperties.btnListFavori.setImageResource(R.drawable.coeur_rouge);
+                    }
+                v = inflater.inflate(R.layout.layout_liste_formations, null);
+
+
             }
         });
         return view;

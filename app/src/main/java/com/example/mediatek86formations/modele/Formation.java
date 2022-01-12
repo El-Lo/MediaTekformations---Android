@@ -13,8 +13,9 @@ public class Formation implements Comparable {
     private String miniature;
     private String picture;
     private String videoId;
+    private boolean isFavouris;
 
-    public Formation(int id, Date publishedAt, String title, String description, String miniature, String picture, String videoId) {
+    public Formation(int id, Date publishedAt, String title, String description, String miniature, String picture, String videoId, boolean isFavouris) {
         this.id = id;
         this.publishedAt = publishedAt;
         this.title = title;
@@ -22,6 +23,7 @@ public class Formation implements Comparable {
         this.miniature = miniature;
         this.picture = picture;
         this.videoId = videoId;
+        this.isFavouris = isFavouris;
     }
 
     public int getId() {
@@ -58,6 +60,14 @@ public class Formation implements Comparable {
 
     public String getVideoId() {
         return videoId;
+    }
+
+    public boolean getIsFavouris() {
+        return isFavouris;
+    }
+
+    public void setFavouris(boolean favouris) {
+        isFavouris = favouris;
     }
 
     @Override

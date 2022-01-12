@@ -3,10 +3,6 @@ S
 #app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
 R
 "app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
-c
-3app/src/main/res/layout/layout_liste_formations.xml,4\a\4a40be302ffe770ce597bc4e2fd7f801f4c7814e
-b
-2app/src/main/res/layout/activity_une_formation.xml,4\8\4840d38d5cbb59a37e549ac1d03df50c1d64e95c
 R
 "app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
 _
@@ -21,10 +17,6 @@ h
 8app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml,6\e\6ec7d34b130497a10dc92abcde9b313d370a89df
 b
 2app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml,8\e\8e27ba16c655f421171956147d0fde89b7d25d17
-€
-Papp/src/main/java/com/example/mediatek86formations/vue/UneFormationActivity.java,a\6\a64174722b60a7f07b1f10e75a520cb3d36c78b2
-y
-Iapp/src/main/java/com/example/mediatek86formations/vue/VideoActivity.java,e\d\edd135a6f8089ff003e39f6e2179b23d9c410c01
 w
 Gapp/src/test/java/com/example/mediatek86formations/ExampleUnitTest.java,f\d\fd6aeafe1bba22d7bde9ed9057419e5d20fb022a
 †
@@ -52,5 +44,13 @@ F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 Z
 *app/src/main/res/layout/activity_video.xml,1\9\195b69a3533dc3349a07a3de07ff32290e5d3f19
-Y
-)app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
+x
+Happ/src/main/java/com/example/mediatek86formations/outils/AccesREST.java,5\e\5e8e71a4977d99858ad46399fe187d064bf2dcc9
+x
+Happ/src/main/java/com/example/mediatek86formations/outils/MesOutils.java,f\0\f094cbdf506b460f0c1ed5f11ceefac0680ed66e
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+|
+Lapp/src/main/java/com/example/mediatek86formations/outils/AsyncResponse.java,8\f\8ffd8ee70650aa900ada7b60f5f028324b9549ce
+y
+Iapp/src/main/java/com/example/mediatek86formations/outils/Serializer.java,9\d\9d78ec99d804191a20daae59a38cae10be8c86a2

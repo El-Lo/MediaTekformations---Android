@@ -16,14 +16,14 @@ import java.util.Date;
 
 public class AccesDistant implements AsyncResponse {
 
-    private static final String SERVERADDR = "http://192.168.70.15/rest_mediatek86formations/";
+    private static final String SERVERADDR = "http://192.168.0.13/rest_mediatek86formations/";
     private Controle controle;
 
     /**
      * constructeur
      */
     public AccesDistant(){
-        controle = Controle.getInstance();
+        controle = Controle.getInstance(null);
     }
 
     /**
@@ -51,7 +51,7 @@ public class AccesDistant implements AsyncResponse {
                     String miniature = info.getString("miniature");
                     String picture = info.getString("picture");
                     String videoId = info.getString("video_id");
-                    Formation formation = new Formation(id, publishedAt, title, description, miniature, picture, videoId);
+                    Formation formation = new Formation(id, publishedAt, title, description, miniature, picture, videoId, false);
                     lesFormations.add(formation);
                 }
                 controle.setLesFormations(lesFormations);
