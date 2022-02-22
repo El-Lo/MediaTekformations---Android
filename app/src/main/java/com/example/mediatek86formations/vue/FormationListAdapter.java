@@ -104,7 +104,7 @@ public class FormationListAdapter extends BaseAdapter {
         });
         viewProperties.btnListFavori.setTag(i);
 
-            if (lesFormations.get(i).getIsFavouris() == true) {
+            if (lesFormations.get(i).getIsFavouris()) {
                 viewProperties.btnListFavori.setImageResource(R.drawable.coeur_rouge);
             } else {
                 viewProperties.btnListFavori.setImageResource(R.drawable.coeur_gris);
@@ -117,7 +117,7 @@ public class FormationListAdapter extends BaseAdapter {
                 int indice = (int)v.getTag();
                 Controle controle = Controle.getInstance(context);
                     viewProperties.btnListFavori = (ImageButton)v.findViewById(R.id.btnListFavori);
-                    if (lesFormations.get(indice).getIsFavouris() == true) {
+                    if (lesFormations.get(indice).getIsFavouris()) {
                         controle.supprFavouris((lesFormations.get(indice)).getId());
                         lesFormations.get(indice).setFavouris(false);
                         viewProperties.btnListFavori.setImageResource(R.drawable.coeur_gris);
@@ -126,7 +126,7 @@ public class FormationListAdapter extends BaseAdapter {
                         lesFormations.get(indice).setFavouris(true);
                         viewProperties.btnListFavori.setImageResource(R.drawable.coeur_rouge);
                     }
-                v = inflater.inflate(R.layout.layout_liste_formations, null);
+                inflater.inflate(R.layout.layout_liste_formations, null);
 
 
             }

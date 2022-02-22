@@ -43,10 +43,18 @@ public class Controle {
         return Controle.instance;
     }
 
+    /**
+     * Retourner une formation
+     * @return
+     */
     public Formation getFormation() {
         return formation;
     }
 
+    /**
+     * set la formation en vue
+     * @param formation
+     */
     public void setFormation(Formation formation) {
         this.formation = formation;
     }
@@ -98,36 +106,47 @@ public class Controle {
         return setFavouris(lesFormationsFiltre);
     }
     /**
-     *
+     * Enregistrer les formations favoris à partir de la base de données locale
      * @param lesFormations
      * @return
      */
     public ArrayList<Formation> setFavouris(ArrayList<Formation> lesFormations){
         ArrayList<Integer> Favouris = _AccesLocal.recupFavouris();
-        for (Integer i : Favouris) {
-            Log.d("1favID", String.valueOf(i));
-        }
+        //pour chaque formation,
         for (Formation f : lesFormations) {
-
             if(Favouris.contains(f.getId()))
             {
                 f.setFavouris(true);
             }
             else
             {
-
                 f.setFavouris(false);
             }
 
         }
         return lesFormations;
     }
+
+    /**
+     * Set les formations à controle
+     * @param lesFormations
+     */
     public void setLesFormations(ArrayList<Formation> lesFormations) {
         this.lesFormations = lesFormations;
     }
+
+    /**
+     * Supprimer une favoris
+     * @param f
+     */
     public void supprFavouris(int f) {
         _AccesLocal.suppr(f);
     }
+
+    /**
+     * Ajouter une favoris
+     * @param f
+     */
     public void ajoutFavouris(int f) {
         _AccesLocal.ajout(f);
     }

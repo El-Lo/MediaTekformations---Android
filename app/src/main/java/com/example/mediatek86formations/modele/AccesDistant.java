@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class AccesDistant implements AsyncResponse {
 
-    private static final String SERVERADDR = "http://192.168.70.15/rest_mediatek86formations/";
+    private static final String SERVERADDR = "http://192.168.0.14/rest_mediatek86formations/";
     private Controle controle;
 
     /**
@@ -69,12 +69,11 @@ public class AccesDistant implements AsyncResponse {
     public void envoi(String operation, JSONObject lesDonneesJSON){
         AccesREST accesDonnees = new AccesREST();
         accesDonnees.delegate = this;
-        String requesMethod = null;
-        switch (operation){
-            case "tous" : requesMethod="GET"; break;
-        }
-        if (requesMethod != null) {
-            accesDonnees.setRequestMethod(requesMethod);
+        String requestMethod = null;
+        if(operation.equals("tous"))
+            requestMethod = "GET";
+        if (requestMethod != null) {
+            accesDonnees.setRequestMethod(requestMethod);
             accesDonnees.addParam("formation");
             if (lesDonneesJSON != null) {
                 accesDonnees.addParam(lesDonneesJSON.toString());

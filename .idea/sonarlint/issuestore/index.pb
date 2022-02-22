@@ -17,8 +17,6 @@ h
 8app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml,6\e\6ec7d34b130497a10dc92abcde9b313d370a89df
 b
 2app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml,8\e\8e27ba16c655f421171956147d0fde89b7d25d17
-w
-Gapp/src/test/java/com/example/mediatek86formations/ExampleUnitTest.java,f\d\fd6aeafe1bba22d7bde9ed9057419e5d20fb022a
 †
 Vapp/src/androidTest/java/com/example/mediatek86formations/ExampleInstrumentedTest.java,9\4\94114013c94f1bc155f9d8eaf30cd66e223732c1
 X
@@ -42,11 +40,3 @@ F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 Z
 *app/src/main/res/layout/activity_video.xml,1\9\195b69a3533dc3349a07a3de07ff32290e5d3f19
-x
-Happ/src/main/java/com/example/mediatek86formations/outils/AccesREST.java,5\e\5e8e71a4977d99858ad46399fe187d064bf2dcc9
-x
-Happ/src/main/java/com/example/mediatek86formations/outils/MesOutils.java,f\0\f094cbdf506b460f0c1ed5f11ceefac0680ed66e
-|
-Lapp/src/main/java/com/example/mediatek86formations/outils/AsyncResponse.java,8\f\8ffd8ee70650aa900ada7b60f5f028324b9549ce
-y
-Iapp/src/main/java/com/example/mediatek86formations/outils/Serializer.java,9\d\9d78ec99d804191a20daae59a38cae10be8c86a2
