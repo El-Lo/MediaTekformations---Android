@@ -28,7 +28,6 @@ public class AccesDistant implements AsyncResponse {
 
     /**
      * retour du serveur distant
-     * @param output
      */
     @Override
     public void processFinish(String output) {
@@ -63,7 +62,7 @@ public class AccesDistant implements AsyncResponse {
 
     /**
      * envoi de données vers le serveur distant
-     * @param operation
+     * @param operation opération à terminer
      * @param lesDonneesJSON
      */
     public void envoi(String operation, JSONObject lesDonneesJSON){
