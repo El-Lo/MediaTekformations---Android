@@ -8,7 +8,6 @@ import com.example.mediatek86formations.modele.AccesDistant;
 import com.example.mediatek86formations.modele.AccesLocal;
 import com.example.mediatek86formations.modele.Formation;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Controle {
@@ -59,8 +58,12 @@ public class Controle {
         this.formation = formation;
     }
 
+    /**
+     *  Retourne une liste de formations avec boolean isFavoris ou pas por chaque
+     * @return  Liste de formations
+     */
     public ArrayList<Formation> getLesFormations() {
-        return setFavouris(lesFormations);
+        return setFavoris(lesFormations);
     }
 
     /**
@@ -70,7 +73,7 @@ public class Controle {
      */
     public ArrayList<Formation> getLesFormationFiltre(String filtre){
         Log.d("filter", "started");
-        // reinitialiser liste
+        // réinitialiser liste
         ArrayList<Formation> lesFormationsFiltre = new ArrayList<>();
         AccesDistant accesDistant = new AccesDistant();
         accesDistant.envoi("tous", null);
@@ -79,12 +82,12 @@ public class Controle {
                 lesFormationsFiltre.add(uneFormation);
             }
         }
-        setFavouris(lesFormationsFiltre);
-        return setFavouris(lesFormationsFiltre);
+        setFavoris(lesFormationsFiltre);
+        return setFavoris(lesFormationsFiltre);
     }
 
     /**
-     * retourne les formations favouris
+     * filtre et retourne les formations favouris
      * @return
      */
     public ArrayList<Formation> getLesFormationFavouris(String filterText){
@@ -100,21 +103,31 @@ public class Controle {
                     lesFormationsFiltre.add(uneFormation);
                 }
             }
-
-
-        setFavouris(lesFormationsFiltre);
-        return setFavouris(lesFormationsFiltre);
+        setFavoris(lesFormationsFiltre);
+        return setFavoris(lesFormationsFiltre);
     }
     /**
      * Enregistrer les formations favoris à partir de la base de données locale
      * @param lesFormations
      * @return
      */
-    public ArrayList<Formation> setFavouris(ArrayList<Formation> lesFormations){
-        ArrayList<Integer> Favouris = _AccesLocal.recupFavouris();
-        //pour chaque formation,
+    public ArrayList<Formation> setFavoris(ArrayList<Formation> lesFormations){
+        ArrayList<Integer> Favoris = _AccesLocal.recupFavouris();
+        SupprimerFavorisOrphelin(lesFormations, Favoris);
+        SetFormationsQuiSontFavoris(lesFormations, Favoris);
+        return lesFormations;
+    }
+
+    /***
+     * Set les formations isfavoris = true, lorsqu'elle existent en favoris
+     * @param lesFormations
+     * @param Favoris
+     */
+    public void SetFormationsQuiSontFavoris(ArrayList<Formation> lesFormations, ArrayList<Integer> Favoris)
+    {
+        // verifier si chaque formation est un favoris ou non
         for (Formation f : lesFormations) {
-            if(Favouris.contains(f.getId()))
+            if(Favoris.contains(f.getId()))
             {
                 f.setFavouris(true);
             }
@@ -122,11 +135,33 @@ public class Controle {
             {
                 f.setFavouris(false);
             }
-
         }
-        return lesFormations;
     }
-
+    /**
+     * Supprimer les formations favoris qui n'existent plus dans la BDD distante
+     * @param lesFormations
+     * @param Favouris
+     */
+     public void SupprimerFavorisOrphelin(ArrayList<Formation> lesFormations,  ArrayList<Integer> Favouris)
+     {
+         // supprimer les favoris qui ont était supprimé dans la BDD distante
+         for(Integer i : Favouris)
+         {
+             Boolean existes = false;
+             for(Formation formation : lesFormations)
+             {
+                 if(formation.getId() == i)
+                 {
+                     existes = true;
+                     break;
+                 }
+             }
+             if(existes == false)
+             {
+                 supprFavouris(i);
+             }
+         }
+     }
     /**
      * Set les formations à controle
      * @param lesFormations

@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.example.mediatek86formations.R;
+import com.example.mediatek86formations.*;
 import com.example.mediatek86formations.controleur.Controle;
 import com.example.mediatek86formations.modele.Formation;
 
@@ -56,7 +56,6 @@ public class FormationsActivity extends AppCompatActivity {
         }
         else
         {
-        Log.d("goToFormationsFilter","going");
             lesFormations = controle.getLesFormationFiltre(filterText);
         }
         if(lesFormations != null){
@@ -66,7 +65,4 @@ public class FormationsActivity extends AppCompatActivity {
             listView.setAdapter(adapter);
         }
     }
-
-
-
 }

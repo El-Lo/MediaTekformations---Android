@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mediatek86formations.R;
+import com.example.mediatek86formations.*;
 import com.example.mediatek86formations.controleur.Controle;
 import com.example.mediatek86formations.modele.Formation;
 import com.example.mediatek86formations.outils.MesOutils;
@@ -81,7 +81,6 @@ public class FormationListAdapter extends BaseAdapter {
             viewProperties.txtListeTitle = (TextView)view.findViewById(R.id.txtListTitle);
             viewProperties.txtListPublishedAt = (TextView)view.findViewById(R.id.txtListPublishedAt);
             viewProperties.btnListFavori = (ImageButton)view.findViewById(R.id.btnListFavori);
-
             view.setTag(viewProperties) ;
         }else{
             viewProperties = (ViewProperties)view.getTag();
@@ -103,7 +102,6 @@ public class FormationListAdapter extends BaseAdapter {
             }
         });
         viewProperties.btnListFavori.setTag(i);
-
             if (lesFormations.get(i).getIsFavouris()) {
                 viewProperties.btnListFavori.setImageResource(R.drawable.coeur_rouge);
             } else {
@@ -136,7 +134,7 @@ public class FormationListAdapter extends BaseAdapter {
 
     /**
      * Ouvre la page du détail de la formation
-     * @param v
+     * @param v la vue
      */
     private void ouvrirUneFormationActivity(View v){
         int indice = (int)v.getTag();

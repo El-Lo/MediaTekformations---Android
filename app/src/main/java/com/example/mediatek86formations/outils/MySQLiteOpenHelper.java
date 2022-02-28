@@ -12,17 +12,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 	private String creation="create table favouris (idFormation INTEGER PRIMARY KEY)";
 
     /**
-     * Construction de l'accès à une base de données locale
-     * @param context
-     * @param name
-     * @param version
-     */
-	public MySQLiteOpenHelper(Context context, String name, int version) {
-		super(context, name, null, version);
-		// TODO Auto-generated constructor stub
-	}
-
-    /**
      * méthode redéfinie appelée automatiquement par le constructeur
      * uniquement si celui-ci repère que la base n'existe pas encore
      * @param db
@@ -31,6 +20,17 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		db.execSQL(creation);
+	}
+
+	/**
+	 * Construction de l'accès à une base de données locale
+	 * @param context
+	 * @param name
+	 * @param version
+	 */
+	public MySQLiteOpenHelper(Context context, String name, int version) {
+		super(context, name, null, version);
+		// TODO Auto-generated constructor stub
 	}
 
     /**

@@ -1,7 +1,7 @@
 package com.example.mediatek86formations.vue;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.mediatek86formations.R;
+import com.example.mediatek86formations.*;
 import com.example.mediatek86formations.controleur.Controle;
 import com.example.mediatek86formations.modele.Formation;
 import com.example.mediatek86formations.outils.MesOutils;
@@ -10,9 +10,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class UneFormationActivity extends AppCompatActivity {
 

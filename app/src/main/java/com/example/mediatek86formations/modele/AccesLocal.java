@@ -40,7 +40,7 @@ public class AccesLocal {
         bd.close(); 
     }
     /**
-     * ajout d'une cle formation dans la BDD
+     * suppression d'une cle formation dans la BDD
      * @param IDFormation
      */
     public void suppr(Integer IDFormation){
@@ -64,9 +64,7 @@ public class AccesLocal {
         if (curseur.moveToFirst()) {
             do {
                 Integer FavID = curseur.getInt(0);
-
                 favouris.add(FavID);
-
             } while (curseur.moveToNext());
         }
         curseur.close();

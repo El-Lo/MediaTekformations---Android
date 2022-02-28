@@ -37,7 +37,7 @@ public class Formation extends ArrayList<Formation> implements Comparable{
 
     /**
      * retourne la date en String au format jj/MM/yyyy
-     * @return
+     * @return La Date converti en chaine
      */
     public String getPublishedAtToString() {
         return MesOutils.convertDateToString(this.publishedAt);

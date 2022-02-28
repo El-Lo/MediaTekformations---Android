@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
-import com.example.mediatek86formations.R;
+import com.example.mediatek86formations.*;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,3 +27,4 @@ public class FormationsActivityTest {
         onView(withId(R.id.btnFiltrer)).perform(click());
     }
 }
+

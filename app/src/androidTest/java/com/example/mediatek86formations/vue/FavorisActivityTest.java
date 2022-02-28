@@ -4,7 +4,7 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.action.ViewActions.click;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
-import com.example.mediatek86formations.R;
+import com.example.mediatek86formations.*;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 
 import org.junit.Rule;
@@ -29,3 +29,4 @@ public class FavorisActivityTest {
 
 
 }
+
